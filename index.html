@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Image Generator</h1>
+    <button onclick="generateRandomImage()">Generate Random Image</button>
+    <div id="image-container"></div>
+
+    <script>
+        // Replace these image URLs with your own.
+        const imageUrls = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            // Add more image URLs as needed
+        ];
+
+        function generateRandomImage() {
+            const container = document.getElementById('image-container');
+            const randomIndex = Math.floor(Math.random() * imageUrls.length);
+            const imageUrl = imageUrls[randomIndex];
+
+            const imageElement = document.createElement('img');
+            imageElement.src = imageUrl;
+
+            // Remove the previous image (if any)
+            container.innerHTML = '';
+
+            // Append the new image to the container
+            container.appendChild(imageElement);
+        }
+    </script>
+</body>
+</html>
